@@ -172,6 +172,118 @@
                 }
             }
         </style>
+        <style id="ak-entry-style">
+/* Arkivklar entry gate — isolated .ak-* namespace, inlined into index.html by apply_gate_patch.py */
+.ak-entry{position:fixed;inset:0;overflow:auto;background:#0D1117;color:#E6EDF3;font-family:"Arial",sans-serif;-webkit-font-smoothing:antialiased;line-height:1.45;z-index:10}
+.ak-entry *{box-sizing:border-box}
+.ak-hidden{display:none !important}
+.ak-wrap{max-width:960px;margin:0 auto;padding:40px 16px 48px}
+.ak-brand{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#8B949E;margin:0 0 6px}
+.ak-title{font-size:26px;font-weight:700;margin:0 0 6px;color:#F0F6FC}
+.ak-sub{font-size:16px;color:#C9D1D9;margin:0 0 28px}
+.ak-choices{display:grid;grid-template-columns:1fr;gap:16px}
+@media (min-width:760px){.ak-choices{grid-template-columns:3fr 2fr;align-items:stretch}}
+.ak-card{display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:10px;width:100%;min-height:150px;padding:22px;border-radius:12px;border:1px solid #30363D;background:#161B22;color:#E6EDF3;font:inherit;cursor:pointer;transition:border-color .15s,background .15s}
+.ak-card:hover{background:#1C2129;border-color:#8B949E}
+.ak-card:focus-visible,.ak-btn:focus-visible{outline:3px solid #4B9CD3;outline-offset:3px}
+.ak-card--primary{border:2px solid #4B9CD3;background:#12202C;padding:28px}
+.ak-card--primary:hover{background:#15283A;border-color:#6FB3E0}
+.ak-card-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.ak-badge{display:inline-block;background:#4B9CD3;color:#06111A;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:3px 9px;border-radius:999px}
+.ak-dur{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:#8B949E;font-variant-numeric:tabular-nums}
+.ak-dur svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2}
+.ak-card-title{font-size:21px;font-weight:700;margin:0;color:#F0F6FC}
+.ak-card--primary .ak-card-title{font-size:24px}
+.ak-card-text{font-size:15px;color:#C9D1D9;margin:0}
+.ak-card-cta{margin-top:auto;font-size:14px;font-weight:700;color:#4B9CD3}
+.ak-card--secondary .ak-card-cta{color:#C9D1D9}
+.ak-player-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.ak-player-title{font-size:18px;font-weight:700;margin:0;color:#F0F6FC}
+.ak-player{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden;border:1px solid #30363D}
+.ak-player video{display:block;width:100%;height:100%;background:#000}
+.ak-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:20px;text-align:center;background:rgba(13,17,23,.88)}
+.ak-overlay p{margin:0;font-size:16px;color:#E6EDF3}
+.ak-overlay .ak-small{font-size:13px;color:#8B949E}
+.ak-progress{width:min(360px,80%);height:6px;border-radius:999px;background:#30363D;overflow:hidden}
+.ak-progress>span{display:block;height:100%;width:0;background:#4B9CD3;transition:width .2s}
+.ak-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:16px}
+.ak-overlay .ak-actions{margin-top:4px;justify-content:center}
+.ak-overlay .ak-actions .ak-small{flex:1 1 100%;margin-bottom:4px}
+@media (min-width:760px){.ak-wrap--choices{min-height:100%;display:flex;flex-direction:column;justify-content:center;padding-top:24px;padding-bottom:64px}}
+.ak-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 18px;border-radius:8px;border:1px solid #30363D;background:#21262D;color:#E6EDF3;font:inherit;font-size:15px;font-weight:700;cursor:pointer;text-decoration:none}
+.ak-btn:hover{background:#30363D}
+.ak-btn--primary{background:#4B9CD3;border-color:#4B9CD3;color:#06111A}
+.ak-btn--primary:hover{filter:brightness(92%);background:#4B9CD3}
+.ak-btn--ghost{background:transparent;border-color:transparent;color:#8B949E}
+.ak-btn--ghost:hover{color:#E6EDF3;background:#161B22}
+.ak-status{min-height:1.4em;font-size:13px;color:#8B949E;margin-top:10px}
+@media (max-width:480px){.ak-wrap{padding:24px 16px 32px}.ak-title{font-size:22px}.ak-card{padding:18px}.ak-card--primary{padding:22px}.ak-card--primary .ak-card-title{font-size:21px}.ak-actions .ak-btn{flex:1 1 100%}}
+@media (prefers-reduced-motion:reduce){.ak-card,.ak-progress>span{transition:none}}
+
+/* Minimal additions: existing choice layout is retained. The logo follows the
+   supplied document/check + two-colour wordmark. Replay overlays the demo DOM. */
+.ak-logo{display:flex;align-items:center;justify-content:center;gap:11px;margin:0 auto 32px;line-height:1}
+.ak-logo-icon{display:block;width:40px;height:42px}
+.ak-logo-icon svg{display:block;width:100%;height:100%}
+.ak-logo-word{font-size:34px;letter-spacing:-.7px;font-weight:700;color:#f4f7fb}
+.ak-logo-accent{color:#4c9fff}
+.ak-demo-video-control{position:fixed;top:18px;right:62px;z-index:1500;min-height:30px;padding:6px 11px;font-family:Arial,sans-serif;font-size:12px;line-height:1.3;border-color:#223047;background:#0d1420;color:#a7bad1}
+.ak-demo-video-control:hover{background:#162334;color:#e6edf3}
+.ak-demo-video-control--inline{position:static;top:auto;right:auto;z-index:auto;height:32px;min-height:32px;padding:0 10px;border-radius:6px;font-size:11px;font-weight:500;border:1px solid var(--bd,#223047);background:transparent;color:var(--t2,#a7bad1);white-space:nowrap;flex-shrink:0}
+.ak-demo-video-control--landing{position:absolute;top:20px;right:64px;z-index:1;height:36px;min-height:36px;padding:0 12px;border-radius:8px;font-size:12px;font-weight:500;border:1px solid var(--bd,#223047);background:transparent;color:var(--t2,#a7bad1);white-space:nowrap}
+.ak-demo-video-control--inline:hover,.ak-demo-video-control--landing:hover{background:var(--bg2,#162334);color:var(--t0,#e6edf3)}
+.ak-entry--replay{z-index:2147483000;background:rgba(7,12,20,.86);backdrop-filter:blur(4px)}
+.ak-entry--replay .ak-wrap{width:calc(100% - 32px);max-width:1024px;margin:32px auto;padding:22px;background:#0d1117;border:1px solid #30363d;border-radius:16px}
+@media(max-width:480px){.ak-logo{margin-bottom:28px}.ak-logo-word{font-size:30px}.ak-logo-icon{width:36px;height:38px}.ak-demo-video-control{top:18px;right:58px}.ak-entry--replay .ak-wrap{width:calc(100% - 20px);margin:12px auto;padding:14px}.ak-entry--replay .ak-player-title{font-size:16px}.ak-entry--replay .ak-player-head{gap:8px}}
+/* Narrow screens: the pilot header row is full, so the header-mounted control docks bottom-left. Compound selector + last rule: must win over the generic mobile rule above. */
+@media(max-width:768px){.ak-demo-video-control.ak-demo-video-control--inline{position:fixed;top:auto;right:auto;left:16px;bottom:20px;z-index:160;height:40px;min-height:40px;padding:0 14px;border-radius:999px;font-size:12px;font-weight:700;background:var(--bg1,#0d1420);box-shadow:0 2px 10px rgba(0,0,0,.35)}}
+
+/* ===== AK-DEMO PLAYER SIZE START (2026-10-10) ===== */
+/* AK-DEMO player sizing only. Append after the existing R2 entry CSS.
+   Keep the choice panel, JS, replay button, Escape and demo state unchanged. */
+.ak-entry > .ak-wrap:not(.ak-wrap--choices){
+  --ak-player-chrome:196px;
+  --ak-player-inset:30px;
+  max-width:none;
+  width:min(calc(100% - 24px),max(calc(256px + var(--ak-player-inset)),calc((100vh - var(--ak-player-chrome))*16/9 + var(--ak-player-inset))),1800px);
+  width:min(calc(100% - 24px),max(calc(256px + var(--ak-player-inset)),calc((100dvh - var(--ak-player-chrome))*16/9 + var(--ak-player-inset))),1800px);
+  margin:12px auto;
+  padding:14px;
+}
+.ak-entry > .ak-wrap:not(.ak-wrap--choices) > .ak-player-head{margin-bottom:10px}
+.ak-entry > .ak-wrap:not(.ak-wrap--choices) > .ak-actions{margin-top:12px}
+.ak-entry > .ak-wrap:not(.ak-wrap--choices) > .ak-status{margin-top:6px}
+.ak-entry > .ak-wrap:not(.ak-wrap--choices) > .ak-player{width:100%;aspect-ratio:16/9}
+.ak-entry > .ak-wrap:not(.ak-wrap--choices) > .ak-player video{object-fit:contain}
+/* Allow the existing loading/error/end controls to scroll inside a small player. */
+.ak-entry > .ak-wrap:not(.ak-wrap--choices) .ak-overlay{
+  overflow:auto;
+  justify-content:flex-start;
+  justify-content:safe center;
+}
+/* Extra allowance for the existing stacked mobile header/footer controls. */
+@media(max-width:600px){
+  .ak-entry > .ak-wrap:not(.ak-wrap--choices){--ak-player-chrome:296px}
+}
+/* Short windows, including phone landscape: compact only player controls. */
+@media(max-height:600px){
+  .ak-entry > .ak-wrap:not(.ak-wrap--choices){
+    --ak-player-chrome:156px;
+    --ak-player-inset:18px;
+    margin:8px auto;
+    padding:8px;
+  }
+  .ak-entry > .ak-wrap:not(.ak-wrap--choices) > .ak-player-head{gap:8px;margin-bottom:8px}
+  .ak-entry > .ak-wrap:not(.ak-wrap--choices) > .ak-player-head .ak-player-title{font-size:16px}
+  .ak-entry > .ak-wrap:not(.ak-wrap--choices) > .ak-actions{gap:8px;margin-top:8px}
+  .ak-entry > .ak-wrap:not(.ak-wrap--choices) .ak-btn{min-height:36px;padding:7px 12px;font-size:14px}
+  .ak-entry > .ak-wrap:not(.ak-wrap--choices) > .ak-status{font-size:12px;margin-top:4px}
+}
+@media(max-width:600px) and (max-height:600px){
+  .ak-entry > .ak-wrap:not(.ak-wrap--choices){--ak-player-chrome:296px}
+}
+/* ===== AK-DEMO PLAYER SIZE END ===== */
+        </style>
     </head>
 
     <body class="staticrypt-body">
@@ -217,6 +329,532 @@
                 </div>
             </div>
         </div>
+
+        <script id="ak-entry-script">
+// Arkivklar entry gate — runs inside the StatiCrypt wrapper after a successful decrypt.
+// Exposes window.AK_ENTRY.replaceHtml(plainHTML, hashedPassword) which StatiCrypt calls via templateConfig.replaceHtmlCallback.
+// The decrypted demo HTML is only written to the document when the user chooses "Open the demo" / "Go straight to the demo".
+(function () {
+    "use strict";
+
+    // ---- editable configuration -------------------------------------------------------------
+    var AK_ENTRY_CONFIG = {
+        lang: "auto",                      // "auto" (follow <html lang> of the decrypted demo) | "en" | "nb"
+        durationLabel: "2:56",
+        media: {
+            mode: "encrypted",             // "encrypted": .akm blob decrypted in the browser with the page key | "plain": ordinary mp4 url
+            url: "media/arkivklar-demo-r4.akm",
+            plainUrl: "media/arkivklar-demo-r4.mp4",
+            expectedBytes: 51498182        // used for the progress bar if the server sends no Content-Length
+        }
+    };
+
+    var I18N = {
+        en: {
+            brand: "Arkivklar · SMS-2A · MossIA",
+            title: "Arkivklar Document Search",
+            sub: "You're in. Choose how you want to start.",
+            recommended: "Recommended",
+            watch: "Watch the video",
+            watchText: "See how to find, check and gather documents in the archive.",
+            watchCta: "Play video",
+            direct: "Go straight to the demo",
+            directText: "Open the working pilot now. No video required.",
+            directCta: "Open demo",
+            back: "Back to choices",
+            playerTitle: "Arkivklar demo video",
+            openDemo: "Open the demo",
+            watchAgain: "Watch again",
+            backToDemo: "Back to demo",
+            replayEnded: "Video finished. Return to your demo or watch again.",
+            loading: "Loading video…",
+            decrypting: "Preparing video…",
+            ready: "Video ready.",
+            ended: "That was the video. Ready to try it yourself?",
+            errorTitle: "The video could not be loaded.",
+            errorText: "You can try again or go straight to the demo.",
+            retry: "Try again",
+            minutes: "min"
+        },
+        nb: {
+            brand: "Arkivklar · SMS-2A · MossIA",
+            title: "Arkivklar Dokumentsøk",
+            sub: "Du er inne. Velg hvordan du vil starte.",
+            recommended: "Anbefalt",
+            watch: "Se video",
+            watchText: "Se hvordan du finner, kontrollerer og samler dokumenter i arkivet.",
+            watchCta: "Spill av video",
+            direct: "Gå rett til demo",
+            directText: "Åpne den fungerende piloten nå. Ingen video kreves.",
+            directCta: "Åpne demo",
+            back: "Tilbake til valgene",
+            playerTitle: "Arkivklar demovideo",
+            openDemo: "Åpne demoen",
+            watchAgain: "Se igjen",
+            backToDemo: "Tilbake til demo",
+            replayEnded: "Videoen er ferdig. Gå tilbake til demoen eller se den igjen.",
+            loading: "Laster video…",
+            decrypting: "Gjør klar video…",
+            ready: "Videoen er klar.",
+            ended: "Det var videoen. Klar til å prøve selv?",
+            errorTitle: "Videoen kunne ikke lastes.",
+            errorText: "Du kan prøve igjen eller gå rett til demoen.",
+            retry: "Prøv igjen",
+            minutes: "min"
+        }
+    };
+
+    var state = {
+        plainHTML: null,
+        hashedPassword: null,
+        lang: "en",
+        t: I18N.en,
+        root: null,
+        view: null,
+        launched: false,
+        replaying: false,
+        mediaUrl: null,          // object URL of decrypted media (encrypted mode)
+        abort: null,
+        loading: false,
+        mediaGeneration: 0       // invalidates async work when leaving/reopening the player
+    };
+
+    function detectLang(plainHTML) {
+        if (AK_ENTRY_CONFIG.lang !== "auto") return AK_ENTRY_CONFIG.lang in I18N ? AK_ENTRY_CONFIG.lang : "en";
+        var m = /<html[^>]*\blang=["']?([a-zA-Z-]+)/i.exec(plainHTML || "");
+        var code = m ? m[1].toLowerCase() : "en";
+        return (/^(nb|nn|no)\b/).test(code) ? "nb" : "en";
+    }
+
+    function el(tag, attrs, children) {
+        var node = document.createElement(tag);
+        if (attrs) Object.keys(attrs).forEach(function (k) {
+            if (k === "text") node.textContent = attrs[k];
+            else if (k === "html") node.innerHTML = attrs[k];
+            else if (k === "on") Object.keys(attrs.on).forEach(function (ev) { node.addEventListener(ev, attrs.on[ev]); });
+            else if (attrs[k] === true) node.setAttribute(k, "");
+            else if (attrs[k] !== false && attrs[k] != null) node.setAttribute(k, attrs[k]);
+        });
+        (children || []).forEach(function (c) { if (c) node.appendChild(typeof c === "string" ? document.createTextNode(c) : c); });
+        return node;
+    }
+
+    var CLOCK_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
+
+    // ---- views --------------------------------------------------------------------------------
+    function renderChoices() {
+        if (state.launched) { closeReplay(); return; }
+        var t = state.t;
+        stopMedia(false);
+        state.view = "choices";
+        var wrap = el("div", { "class": "ak-wrap ak-wrap--choices" }, [
+            brandLogo(),
+            el("p", { "class": "ak-brand", text: t.brand }),
+            el("h1", { "class": "ak-title", text: t.title }),
+            el("p", { "class": "ak-sub", text: t.sub }),
+            el("div", { "class": "ak-choices", role: "group", "aria-label": t.sub }, [
+                el("button", { type: "button", "class": "ak-card ak-card--primary", id: "ak-choice-video", on: { click: showPlayer } }, [
+                    el("div", { "class": "ak-card-top" }, [
+                        el("span", { "class": "ak-badge", text: t.recommended }),
+                        el("span", { "class": "ak-dur", html: CLOCK_SVG + "<span>" + AK_ENTRY_CONFIG.durationLabel + " " + t.minutes + "</span>" })
+                    ]),
+                    el("h2", { "class": "ak-card-title", text: t.watch }),
+                    el("p", { "class": "ak-card-text", text: t.watchText }),
+                    el("span", { "class": "ak-card-cta", text: t.watchCta + " →" })
+                ]),
+                el("button", { type: "button", "class": "ak-card ak-card--secondary", id: "ak-choice-demo", on: { click: launchDemo } }, [
+                    el("h2", { "class": "ak-card-title", text: t.direct }),
+                    el("p", { "class": "ak-card-text", text: t.directText }),
+                    el("span", { "class": "ak-card-cta", text: t.directCta + " →" })
+                ])
+            ])
+        ]);
+        state.root.replaceChildren(wrap);
+        var first = document.getElementById("ak-choice-video");
+        if (first) first.focus();
+    }
+
+    function showPlayer() {
+        var t = state.replaying ? Object.assign({}, state.t, { back: state.t.backToDemo, openDemo: state.t.backToDemo }) : state.t;
+        state.view = "player";
+        var video = el("video", { id: "ak-video", controls: true, preload: "none", playsinline: true, "aria-label": t.playerTitle });
+        var progressBar = el("span");
+        var overlayText = el("p", { id: "ak-overlay-text", text: t.loading });
+        var overlay = el("div", { "class": "ak-overlay", id: "ak-overlay", role: "status", "aria-live": "polite" }, [
+            overlayText,
+            el("div", { "class": "ak-progress", id: "ak-progress", "aria-hidden": "true" }, [progressBar]),
+            el("div", { "class": "ak-actions ak-hidden", id: "ak-overlay-actions" })
+        ]);
+        var player = el("div", { "class": "ak-player", id: "ak-player" }, [video, overlay]);
+        var wrap = el("div", { "class": "ak-wrap" }, [
+            el("div", { "class": "ak-player-head" }, [
+                el("button", { type: "button", "class": "ak-btn ak-btn--ghost", id: "ak-back-top", on: { click: renderChoices } }, ["← " + t.back]),
+                el("h1", { "class": "ak-player-title", id: "ak-player-heading", text: t.playerTitle + " · " + AK_ENTRY_CONFIG.durationLabel })
+            ]),
+            player,
+            el("div", { "class": "ak-actions" }, [
+                el("button", { type: "button", "class": "ak-btn ak-btn--primary", id: "ak-open-demo", on: { click: launchDemo } }, [t.openDemo]),
+                el("button", { type: "button", "class": "ak-btn", id: "ak-back-bottom", on: { click: renderChoices } }, [t.back])
+            ]),
+            el("div", { "class": "ak-status", id: "ak-status", "aria-live": "polite" })
+        ]);
+        state.root.replaceChildren(wrap);
+        document.getElementById("ak-back-top").focus();
+
+        function currentPlayer() { return state.view === "player" && document.getElementById("ak-video") === video; }
+        video.addEventListener("loadeddata", function () { if (currentPlayer()) { setOverlay(null); setStatus(t.ready); } });
+        video.addEventListener("playing", function () { if (currentPlayer()) setOverlay(null); });
+        video.addEventListener("error", function () { if (currentPlayer()) showError(); });
+        video.addEventListener("ended", function () {
+            if (!currentPlayer()) return;
+            if (document.fullscreenElement && document.exitFullscreen) { document.exitFullscreen().catch(function () {}); }
+            showEnded();
+        });
+        startMedia(video, progressBar);
+    }
+
+    function setOverlay(text, opts) {
+        var ov = document.getElementById("ak-overlay");
+        if (!ov) return;
+        if (text == null) { ov.classList.add("ak-hidden"); return; }
+        ov.classList.remove("ak-hidden");
+        document.getElementById("ak-overlay-text").textContent = text;
+        var prog = document.getElementById("ak-progress");
+        var actions = document.getElementById("ak-overlay-actions");
+        prog.classList.toggle("ak-hidden", !(opts && opts.progress));
+        actions.classList.toggle("ak-hidden", !(opts && opts.actions));
+        if (opts && opts.actions) actions.replaceChildren.apply(actions, opts.actions);
+    }
+
+    function setStatus(text) {
+        var s = document.getElementById("ak-status");
+        if (s) s.textContent = text || "";
+    }
+
+    function showError() {
+        var t = state.replaying ? Object.assign({}, state.t, { back: state.t.backToDemo, openDemo: state.t.backToDemo }) : state.t;
+        state.loading = false;
+        setStatus(t.errorTitle);
+        setOverlay(t.errorTitle, {
+            actions: [
+                el("p", { "class": "ak-small", text: t.errorText }),
+                el("button", { type: "button", "class": "ak-btn ak-btn--primary", id: "ak-error-demo", on: { click: launchDemo } }, [t.openDemo]),
+                el("button", { type: "button", "class": "ak-btn", id: "ak-error-retry", on: { click: function () { showPlayer(); } } }, [t.retry]),
+                el("button", { type: "button", "class": "ak-btn ak-btn--ghost", on: { click: renderChoices } }, [t.back])
+            ]
+        });
+        var b = document.getElementById("ak-error-demo"); if (b) b.focus();
+    }
+
+    function showEnded() {
+        var t = state.replaying ? Object.assign({}, state.t, { back: state.t.backToDemo, openDemo: state.t.backToDemo, ended: state.t.replayEnded }) : state.t;
+        setOverlay(t.ended, {
+            actions: [
+                el("button", { type: "button", "class": "ak-btn ak-btn--primary", id: "ak-ended-demo", on: { click: launchDemo } }, [t.openDemo]),
+                el("button", { type: "button", "class": "ak-btn", id: "ak-ended-again", on: { click: function () {
+                    var v = document.getElementById("ak-video"); setOverlay(null); if (v) { v.currentTime = 0; v.play().catch(function () {}); }
+                } } }, [t.watchAgain]),
+                el("button", { type: "button", "class": "ak-btn ak-btn--ghost", on: { click: renderChoices } }, [t.back])
+            ]
+        });
+        var b = document.getElementById("ak-ended-demo"); if (b) b.focus();
+    }
+
+    // ---- media loading ------------------------------------------------------------------------
+    function startMedia(video, progressBar) {
+        var t = state.t, cfg = AK_ENTRY_CONFIG.media;
+        if (cfg.mode === "plain") {
+            setOverlay(t.loading, { progress: false });
+            setStatus(t.loading);
+            video.preload = "auto";
+            video.src = cfg.plainUrl;
+            video.load();
+            video.play().catch(function () {});
+            return;
+        }
+        if (state.mediaUrl) { attach(video, state.mediaUrl); return; }
+        if (state.loading) return;
+        state.loading = true;
+        var generation = ++state.mediaGeneration;
+        setOverlay(t.loading, { progress: true });
+        setStatus(t.loading);
+        var ctrl = new AbortController();
+        state.abort = ctrl;
+        function isCurrent() {
+            return generation === state.mediaGeneration && !ctrl.signal.aborted && state.view === "player" && (!state.launched || state.replaying) && document.getElementById("ak-video") === video;
+        }
+        fetchWithProgress(cfg.url, ctrl.signal, function (loaded, total) {
+            if (!isCurrent()) return;
+            var pct = total ? Math.min(100, Math.round(loaded / total * 100)) : 0;
+            progressBar.style.width = pct + "%";
+            var txt = document.getElementById("ak-overlay-text");
+            if (txt) txt.textContent = t.loading + (total ? " " + pct + "%" : "");
+        }).then(function (bytes) {
+            if (!isCurrent()) return null;
+            setOverlay(t.decrypting, { progress: false });
+            return decryptMedia(bytes, state.hashedPassword);
+        }).then(function (plain) {
+            if (!isCurrent()) return;
+            state.loading = false;
+            state.abort = null;
+            var blob = new Blob([plain], { type: "video/mp4" });
+            state.mediaUrl = URL.createObjectURL(blob);
+            attach(video, state.mediaUrl);
+        }).catch(function (err) {
+            if (generation !== state.mediaGeneration) return;
+            state.loading = false;
+            state.abort = null;
+            if (err && err.name === "AbortError") return;
+            if (state.view === "player") showError();
+        });
+    }
+
+    function attach(video, url) {
+        var generation = state.mediaGeneration;
+        video.src = url;
+        video.load();
+        video.play().catch(function () {
+            if (generation === state.mediaGeneration && state.view === "player" && (!state.launched || state.replaying) && document.getElementById("ak-video") === video) setOverlay(null);
+        });
+    }
+
+    function fetchWithProgress(url, signal, onProgress) {
+        return fetch(url, { signal: signal, cache: "no-store" }).then(function (res) {
+            if (!res.ok) throw new Error("HTTP " + res.status);
+            var total = parseInt(res.headers.get("Content-Length") || "0", 10) || AK_ENTRY_CONFIG.media.expectedBytes || 0;
+            if (!res.body || !res.body.getReader) return res.arrayBuffer().then(function (b) { onProgress(b.byteLength, b.byteLength); return new Uint8Array(b); });
+            var reader = res.body.getReader(), chunks = [], loaded = 0;
+            function pump() {
+                return reader.read().then(function (r) {
+                    if (r.done) {
+                        var out = new Uint8Array(loaded), off = 0;
+                        chunks.forEach(function (c) { out.set(c, off); off += c.length; });
+                        return out;
+                    }
+                    chunks.push(r.value); loaded += r.value.length; onProgress(loaded, total);
+                    return pump();
+                });
+            }
+            return pump();
+        });
+    }
+
+    // .akm format: "AKMEDIA1" (8) | HMAC-SHA256(key, iv||ct) (32) | iv (16) | AES-256-CBC ciphertext. key = StatiCrypt hashedPassword bytes.
+    function hexToBytes(hex) {
+        var out = new Uint8Array(hex.length / 2);
+        for (var i = 0; i < hex.length; i += 2) out[i / 2] = parseInt(hex.substr(i, 2), 16);
+        return out;
+    }
+    function decryptMedia(bytes, hashedPassword) {
+        var magic = "AKMEDIA1";
+        if (!hashedPassword) return Promise.reject(new Error("No page key"));
+        for (var i = 0; i < 8; i++) if (bytes[i] !== magic.charCodeAt(i)) return Promise.reject(new Error("Bad media header"));
+        var mac = bytes.subarray(8, 40), iv = bytes.subarray(40, 56), ct = bytes.subarray(56);
+        var signed = bytes.subarray(40);
+        var keyBytes = hexToBytes(hashedPassword);
+        return crypto.subtle.importKey("raw", keyBytes, { name: "HMAC", hash: "SHA-256" }, false, ["verify"]).then(function (hk) {
+            return crypto.subtle.verify("HMAC", hk, mac, signed);
+        }).then(function (ok) {
+            if (!ok) throw new Error("Media signature mismatch");
+            return crypto.subtle.importKey("raw", keyBytes, "AES-CBC", false, ["decrypt"]);
+        }).then(function (ak) {
+            return crypto.subtle.decrypt({ name: "AES-CBC", iv: iv }, ak, ct);
+        });
+    }
+
+    function stopMedia(release) {
+        state.mediaGeneration++;
+        if (state.abort) { try { state.abort.abort(); } catch (e) {} state.abort = null; }
+        state.loading = false;
+        var v = document.getElementById("ak-video");
+        if (v) { try { v.pause(); v.removeAttribute("src"); v.load(); } catch (e) {} }
+        if (release && state.mediaUrl) { try { URL.revokeObjectURL(state.mediaUrl); } catch (e) {} state.mediaUrl = null; }
+    }
+
+    // Replay UI is installed after the existing document.write handoff. The demo DOM,
+    // searches, filters and working-set state remain mounted beneath a modal player.
+    var entryStyleNode = document.getElementById("ak-entry-style");
+    var entryStyleText = entryStyleNode ? entryStyleNode.textContent : "";
+    var BRAND_SVG = '<svg viewBox="0 0 42 44" aria-hidden="true" focusable="false"><rect x="3" y="2" width="29" height="37" rx="5" fill="#17314b"/><path d="M10 13h15M10 19h12M10 25h9" stroke="#4c9fff" stroke-width="2" stroke-linecap="round"/><circle cx="29" cy="31" r="11" fill="#123e3c"/><path d="m24 31 3.3 3.2 6-6.2" fill="none" stroke="#21d5a0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+    function brandLogo() {
+        return el("div", { "class": "ak-logo", role: "img", "aria-label": "Arkivklar" }, [
+            el("span", { "class": "ak-logo-icon", html: BRAND_SVG }),
+            el("span", { "class": "ak-logo-word" }, [
+                el("span", { text: "Arkiv" }),
+                el("span", { "class": "ak-logo-accent", text: "klar" })
+            ])
+        ]);
+    }
+
+    function ensureReplayStyles() {
+        if (!document.getElementById("ak-entry-style") && !document.getElementById("ak-replay-style")) {
+            var style = el("style", { id: "ak-replay-style", text: entryStyleText });
+            (document.head || document.documentElement).appendChild(style);
+        }
+    }
+
+    function installReplayControl() {
+        if (!state.launched || !document.body || document.getElementById("ak-demo-video")) return;
+        ensureReplayStyles();
+        var control = el("button", {
+            type: "button", id: "ak-demo-video", "class": "ak-btn ak-demo-video-control",
+            "aria-haspopup": "dialog", "aria-controls": "ak-entry-replay",
+            on: { click: openReplay }
+        }, [
+            el("span", { "aria-hidden": "true", text: "▶" }),
+            el("span", { text: state.t.watch })
+        ]);
+        placeReplayControl(control);
+    }
+
+    // Placement (lab R2 adjustment): the pilot's archive landing is a fixed overlay (z-index 9999) that
+    // covers a body-level control, and its fixed header leaves no free top-right space on every width.
+    // Mount the single control inside the landing while it is shown, otherwise inside the header's own
+    // control group (the header layout then prevents overlap). Without such elements: body + fixed CSS.
+    function placeReplayControl(control) {
+        var landing = document.getElementById("archiveLanding");
+        var header = document.querySelector ? document.querySelector(".hd-r") : null;
+        function landingShown() {
+            return !!(landing && landing.isConnected !== false && landing.style && landing.style.display !== "none");
+        }
+        function mount(parent, variant, before) {
+            control.classList.remove("ak-demo-video-control--inline");
+            control.classList.remove("ak-demo-video-control--landing");
+            if (variant) control.classList.add(variant);
+            if (control.parentNode === parent) return;
+            if (before) parent.insertBefore(control, before); else parent.appendChild(control);
+        }
+        function place() {
+            if (landingShown()) mount(landing, "ak-demo-video-control--landing", null);
+            else if (header) {
+                var theme = document.getElementById("themeBtn");
+                mount(header, "ak-demo-video-control--inline", theme && theme.parentNode === header ? theme : null);
+            } else mount(document.body, null, null);
+        }
+        place();
+        if (landing && typeof MutationObserver === "function") {
+            new MutationObserver(place).observe(landing, { attributes: true, attributeFilter: ["style", "class"] });
+        }
+    }
+
+    function openReplay() {
+        if (!state.launched || state.replaying) return;
+        ensureReplayStyles();
+        state.replayReturnFocus = document.activeElement;
+        state.replayScroll = { x: window.scrollX, y: window.scrollY };
+        state.replayOverflow = document.body.style.overflow;
+        state.replayInert = [];
+        Array.prototype.forEach.call(document.body.children, function (node) {
+            if (/^(SCRIPT|STYLE|LINK)$/.test(node.tagName)) return;
+            state.replayInert.push({ node: node, value: node.getAttribute("inert") });
+            node.setAttribute("inert", "");
+        });
+        document.body.style.overflow = "hidden";
+        state.replaying = true;
+        state.root = el("div", {
+            id: "ak-entry-replay", "class": "ak-entry ak-entry--replay",
+            role: "dialog", "aria-modal": "true", "aria-labelledby": "ak-player-heading",
+            lang: state.lang === "nb" ? "nb" : "en"
+        });
+        state.root.addEventListener("keydown", replayKeydown);
+        document.body.appendChild(state.root);
+        showPlayer();
+    }
+
+    function replayKeydown(e) {
+        if (!state.replaying) return;
+        if (e.key === "Escape") {
+            // Never let Escape reach the (inert) demo beneath the modal: the pilot has its own
+            // document-level Escape handling that would change its view/working set. In fullscreen
+            // the browser exits fullscreen itself; the modal stays open.
+            e.stopPropagation();
+            if (document.fullscreenElement) return;
+            e.preventDefault();
+            closeReplay();
+            return;
+        }
+        if (e.key !== "Tab") return;
+        var focusable = Array.prototype.filter.call(state.root.querySelectorAll(
+            'button:not([disabled]),video[controls],[href],input,select,textarea,[tabindex]:not([tabindex="-1"])'
+        ), function (node) { return !!(node.offsetWidth || node.offsetHeight || node.getClientRects().length); });
+        var first = focusable[0], last = focusable[focusable.length - 1];
+        if (!first) { e.preventDefault(); return; }
+        if (e.shiftKey && (document.activeElement === first || !state.root.contains(document.activeElement))) {
+            e.preventDefault(); last.focus();
+        } else if (!e.shiftKey && (document.activeElement === last || !state.root.contains(document.activeElement))) {
+            e.preventDefault(); first.focus();
+        }
+    }
+
+    function closeReplay() {
+        if (!state.replaying) return;
+        stopMedia(false);
+        if (document.fullscreenElement && document.exitFullscreen) {
+            try { var exiting = document.exitFullscreen(); if (exiting && exiting.catch) exiting.catch(function () {}); } catch (e) {}
+        }
+        if (state.root) {
+            state.root.removeEventListener("keydown", replayKeydown);
+            state.root.remove();
+        }
+        (state.replayInert || []).forEach(function (item) {
+            if (item.value === null) item.node.removeAttribute("inert");
+            else item.node.setAttribute("inert", item.value);
+        });
+        document.body.style.overflow = state.replayOverflow;
+        state.replaying = false;
+        state.view = "demo";
+        state.root = null;
+        state.replayInert = [];
+        var returnTo = state.replayReturnFocus;
+        state.replayReturnFocus = null;
+        if (returnTo && returnTo.isConnected) returnTo.focus({ preventScroll: true });
+        else { var control = document.getElementById("ak-demo-video"); if (control) control.focus({ preventScroll: true }); }
+        if (state.replayScroll) window.scrollTo(state.replayScroll.x, state.replayScroll.y);
+    }
+
+
+    // ---- hand-over to the existing demo (identical to StatiCrypt's default behaviour) -------
+    function launchDemo() {
+        if (state.launched) { closeReplay(); return; }
+        if (!state.plainHTML) return;
+        state.launched = true;
+        stopMedia(true);
+        if (document.fullscreenElement && document.exitFullscreen) { try { document.exitFullscreen(); } catch (e) {} }
+        var html = state.plainHTML;
+        state.plainHTML = null;
+        document.write(html);
+        document.close();
+        // document.write replaces the document and clears the old document listeners.
+        // Install only the new replay control/styles after the demo has initialized.
+        window.setTimeout(function () {
+            if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", installReplayControl, { once: true });
+            else installReplayControl();
+        }, 0);
+    }
+
+    function replaceHtml(plainHTML, hashedPassword) {
+        state.plainHTML = plainHTML;
+        state.hashedPassword = hashedPassword || null;
+        state.lang = detectLang(plainHTML);
+        state.t = I18N[state.lang];
+        var loading = document.getElementById("staticrypt_loading");
+        var content = document.getElementById("staticrypt_content");
+        if (loading) loading.classList.add("hidden");
+        if (content) content.classList.add("hidden");
+        if (!state.root) {
+            state.root = el("div", { id: "ak-entry", "class": "ak-entry", lang: state.lang === "nb" ? "nb" : "en" });
+            document.body.appendChild(state.root);
+            document.addEventListener("keydown", function (e) {
+                if (e.key === "Escape" && state.view === "player" && !document.fullscreenElement && !state.launched) renderChoices();
+            });
+        }
+        renderChoices();
+    }
+
+    window.AK_ENTRY = { replaceHtml: replaceHtml, config: AK_ENTRY_CONFIG };
+})();
+        </script>
 
         <script>
             // these variables will be filled when generating the file - the template format is 'variable_name'
@@ -575,6 +1213,7 @@ function init(cryptoEngine) {
         return {
             success: true,
             decoded: await cryptoEngine.decrypt(encryptedMsg, hashedPassword),
+            hashedPassword,
         };
     }
     exports.decode = decode;
@@ -629,7 +1268,7 @@ function init(staticryptConfig, templateConfig) {
 
         // if the user configured a callback call it, otherwise just replace the whole HTML
         if (typeof replaceHtmlCallback === "function") {
-            replaceHtmlCallback(plainHTML);
+            replaceHtmlCallback(plainHTML, result.hashedPassword);
         } else {
             document.write(plainHTML);
             document.close();
@@ -826,7 +1465,7 @@ exports.init = init;
             const templateConfig = {
                 rememberExpirationKey: "staticrypt_expiration",
                 rememberPassphraseKey: "staticrypt_passphrase",
-                replaceHtmlCallback: null,
+                replaceHtmlCallback: window.AK_ENTRY.replaceHtml,
                 clearLocalStorageCallback: null,
             };
 
