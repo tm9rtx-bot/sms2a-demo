@@ -1,0 +1,24 @@
+{
+ "note": "Allow-list for the static web deliverable of demo.arkivklar.no (Azure Static Web Apps + GitHub Pages). Only these exact bytes are published; see tools/build_publish_set.py. Update sha256/bytes here whenever an approved new index.html is committed.",
+ "files": {
+  "index.html": {
+   "sha256": "92dadc38b911c25587d925db6f8a824319c661c9c8528ed4b0e128e5ae265b37",
+   "bytes": 6269598
+  },
+  "media/arkivklar-demo-r4.akm": {
+   "sha256": "a646b356c07020559ba728b350c90c6d41902b0e7414af7dc074e57bdcbdab78",
+   "bytes": 51498248
+  },
+  "CNAME": {
+   "sha256": "7ff8b9b6437dbdbad97a8aac15c47310bc6260f9ac447609c5799729343a97ad",
+   "bytes": 17
+  }
+ },
+ "excluded": [
+  "encrypt.py",
+  "encrypt_quick.py",
+  ".staticrypt.json",
+  "old_version_temp.html",
+  "encrypted/search_v10_5_test.html"
+ ]
+}

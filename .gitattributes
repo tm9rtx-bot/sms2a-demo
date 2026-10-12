@@ -1,0 +1,3 @@
+# Byte preservation for the published demo (no EOL conversion on checkout/staging)
+index.html -text
+*.akm binary
