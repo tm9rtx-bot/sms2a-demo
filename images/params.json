@@ -1,0 +1,1 @@
+{"v": 1, "kdf": "HKDF-SHA256", "info": "arkivklar-images-r8/v1", "salt": "75e5c4211b057cd99e526b4f966c3975a3fc1a2185239c4d1598823fba487d8d", "aead": "AES-256-GCM", "magic": "AKIMG1"}
