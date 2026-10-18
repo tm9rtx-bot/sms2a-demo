@@ -1,5 +1,5 @@
 {
- "note": "Allow-list for the static web deliverable of demo.arkivklar.no (Azure Static Web Apps + GitHub Pages). Only these exact bytes are published; see tools/build_publish_set.py. Gold Demo SOURCE-RECOVERY release finalized 2026-10-18 (tree 33435ff3058ba072).",
+ "note": "Allow-list for the static web deliverable of demo.arkivklar.no (Azure Static Web Apps + GitHub Pages). Only these exact bytes are published; see tools/build_publish_set.py. Gold Demo SOURCE-RECOVERY release finalized 2026-10-18 (tree 33435ff3058ba072). R03 Images video added 2026-10-18 (media/arkivklar-demo-r03-images.akm; media/arkivklar-demo-r4.akm kept for rollback).",
  "files": {
   "CNAME": {
    "sha256": "7ff8b9b6437dbdbad97a8aac15c47310bc6260f9ac447609c5799729343a97ad",
@@ -6126,8 +6126,12 @@
    "bytes": 182
   },
   "index.html": {
-   "sha256": "acd537ec173894d7768be3652820569399f0433d5914c9d27b6ec0a495a16e42",
-   "bytes": 8311091
+   "sha256": "121d99e2870b817f03c154ad0c9dc928f23eed733dec3a34d59dbab1655a6c7d",
+   "bytes": 8311107
+  },
+  "media/arkivklar-demo-r03-images.akm": {
+   "sha256": "266242b514064885344feb68f40fcf2773c76e41659e68c1e5e475824ed475f2",
+   "bytes": 55813352
   },
   "media/arkivklar-demo-r4.akm": {
    "sha256": "a646b356c07020559ba728b350c90c6d41902b0e7414af7dc074e57bdcbdab78",
